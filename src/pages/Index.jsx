@@ -1,15 +1,33 @@
-// Complete the Index page component here
-// Use chakra-ui
-import { Button } from "@chakra-ui/react"; // example
-import { FaPlus } from "react-icons/fa"; // example - use react-icons/fa for icons
+import { Box, Text, Flex, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, SimpleGrid } from "@chakra-ui/react";
+import { FaBusinessTime } from "react-icons/fa";
 
 const Index = () => {
-  // TODO: Create the website here!
   return (
-    <Button>
-      Hello world! <FaPlus />
-    </Button>
-  ); // example
+    <Box p={5}>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Text fontSize="2xl" fontWeight="bold">Business Dashboard</Text>
+        <FaBusinessTime size="24px" />
+      </Flex>
+      <SimpleGrid columns={2} spacing={10} mt={5}>
+        <Stat p={5} boxShadow="md" borderRadius="md">
+          <StatLabel>Sales</StatLabel>
+          <StatNumber>$30,000</StatNumber>
+          <StatHelpText>
+            <StatArrow type="increase" />
+            23.36%
+          </StatHelpText>
+        </Stat>
+        <Stat p={5} boxShadow="md" borderRadius="md">
+          <StatLabel>Revenue</StatLabel>
+          <StatNumber>$45,000</StatNumber>
+          <StatHelpText>
+            <StatArrow type="increase" />
+            10.12%
+          </StatHelpText>
+        </Stat>
+      </SimpleGrid>
+    </Box>
+  );
 };
 
 export default Index;
